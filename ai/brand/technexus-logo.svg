@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" width="340" height="64" role="img" aria-label="TechNexus">
+  <defs>
+    <linearGradient id="tnxL" x1="0.08" y1="1" x2="0.92" y2="0">
+      <stop offset="0%"   stop-color="#1E3AC8"/>
+      <stop offset="50%"  stop-color="#2B7BEE"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 9 L51.9 20.5 L51.9 43.5 L32 55 L12.1 43.5 L12.1 20.5 Z"
+        fill="none" stroke="url(#tnxL)" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M22 43 L22 24 L42 41 L42 22"
+        fill="none" stroke="url(#tnxL)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="url(#tnxL)">
+    <circle cx="32" cy="9" r="4.6"/><circle cx="51.9" cy="20.5" r="4.6"/><circle cx="51.9" cy="43.5" r="4.6"/>
+    <circle cx="32" cy="55" r="4.6"/><circle cx="12.1" cy="43.5" r="4.6"/><circle cx="12.1" cy="20.5" r="4.6"/>
+    <circle cx="42" cy="22" r="3.4"/><circle cx="22" cy="43" r="3.4"/>
+  </g>
+  <text x="76" y="42" font-family="Segoe UI,system-ui,-apple-system,Helvetica Neue,Arial,sans-serif"
+        font-size="30" font-weight="700" letter-spacing="-0.3" fill="currentColor">TechNexus</text>
+</svg>

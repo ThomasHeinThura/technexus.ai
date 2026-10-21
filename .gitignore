@@ -1,0 +1,5 @@
+.env
+*.env
+notes/
+docker-compose.notes.yml
+.DS_Store
