@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070C1A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='.08' y1='1' x2='.92' y2='0'%3E%3Cstop offset='0%25' stop-color='%231E3AC8'/%3E%3Cstop offset='50%25' stop-color='%232B7BEE'/%3E%3Cstop offset='100%25' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 9 L51.9 20.5 L51.9 43.5 L32 55 L12.1 43.5 L12.1 20.5 Z' fill='none' stroke='url(%23g)' stroke-width='3'/%3E%3Cpath d='M22 43 L22 24 L42 41 L42 22' fill='none' stroke='url(%23g)' stroke-width='5' stroke-linecap='round'/%3E%3Cg fill='url(%23g)'%3E%3Ccircle cx='32' cy='9' r='5'/%3E%3Ccircle cx='51.9' cy='20.5' r='5'/%3E%3Ccircle cx='51.9' cy='43.5' r='5'/%3E%3Ccircle cx='32' cy='55' r='5'/%3E%3Ccircle cx='12.1' cy='43.5' r='5'/%3E%3Ccircle cx='12.1' cy='20.5' r='5'/%3E%3C/g%3E%3C/svg%3E">
-<meta name="description" content="Enterprise AI on a real budget — four GPU procurement paths, six reference architectures and a GPU memory planner for Myanmar. By Thomas Hein Thura, Solutions Architect.">
+<meta name="description" content="Enterprise AI on a real budget — four GPU procurement paths, seven reference architectures and a GPU memory planner for Myanmar. By Thomas Hein Thura, Solutions Architect.">
 
 <style>
 /* ── TechNexus palette · deep blue → cyan, taken from the mark ── */
@@ -342,7 +342,7 @@ setTimeout(function(){
   <p class="lede" data-rv>Sovereign, procurable designs a six-person team can run.</p>
   <div class="hero-stats">
     <div class="stat" data-rv><div class="n" data-count="4">4</div><div class="l">GPU procurement paths</div></div>
-    <div class="stat" data-rv><div class="n" data-count="6">6</div><div class="l">Reference architectures</div></div>
+    <div class="stat" data-rv><div class="n" data-count="7">7</div><div class="l">Reference architectures</div></div>
     <div class="stat" data-rv><div class="n" data-count="1" data-suf="M+">1M+</div><div class="l">API calls a day in production</div></div>
     <div class="stat" data-rv><div class="n" data-count="99.99" data-dec="2" data-suf="%">99.99%</div><div class="l">Uptime, regulated workloads</div></div>
   </div>
@@ -515,15 +515,15 @@ setTimeout(function(){
 <!-- ================= 03 · ARCHITECTURE ================= -->
 <div class="chapter" id="ch3" data-ch="3"><div class="container chapter-in" data-rv>
   <span class="ch-n grad-text">03</span>
-  <div class="ch-t"><b>Architecture</b><span>Six reference designs</span></div>
-  <div class="ch-links"><a href="#infra"><b>1</b>Infrastructure</a><a href="#fabric"><b>2</b>Request path</a><a href="#gpu"><b>3</b>GPU platform</a><a href="#app"><b>4</b>Application</a><a href="#guardrails"><b>5</b>Guardrails</a><a href="#mlops"><b>6</b>MLOps</a></div>
+  <div class="ch-t"><b>Architecture</b><span>Seven reference designs</span></div>
+  <div class="ch-links"><a href="#infra"><b>1</b>Infrastructure</a><a href="#fabric"><b>2</b>Request path</a><a href="#gpu"><b>3</b>GPU platform</a><a href="#app"><b>4</b>Application</a><a href="#guardrails"><b>5</b>Guardrails</a><a href="#mlops"><b>6</b>MLOps</a><a href="#decide"><b>7</b>Decision layer</a></div>
 </div></div>
 
 <!-- 3.1 Infrastructure -->
 <section id="infra" data-ch="3">
   <div class="container">
     <div class="sec-head" data-rv>
-      <div class="eyebrow">Architecture <i>· 1 / 6</i></div>
+      <div class="eyebrow">Architecture <i>· 1 / 7</i></div>
       <h2>Three tiers, <span class="grad-text">plus a GPU tier</span></h2>
       <p>Familiar enough to pass security review in an afternoon.</p>
     </div>
@@ -585,7 +585,7 @@ setTimeout(function(){
 <section id="fabric" class="tint" data-ch="3">
   <div class="container">
     <div class="sec-head" data-rv>
-      <div class="eyebrow">Architecture <i>· 2 / 6</i></div>
+      <div class="eyebrow">Architecture <i>· 2 / 7</i></div>
       <h2>One request, <span class="grad-text">six steps</span></h2>
       <p>Four tiers on one fabric, each scaling on its own.</p>
     </div>
@@ -664,7 +664,7 @@ setTimeout(function(){
 <section id="gpu" data-ch="3">
   <div class="container">
     <div class="sec-head" data-rv>
-      <div class="eyebrow">Architecture <i>· 3 / 6</i></div>
+      <div class="eyebrow">Architecture <i>· 3 / 7</i></div>
       <h2>One GPU pool, <span class="grad-text">many agents</span></h2>
       <p>Agent one buys the hardware. The rest are configuration.</p>
     </div>
@@ -715,7 +715,7 @@ setTimeout(function(){
 <section id="app" class="tint" data-ch="3">
   <div class="container">
     <div class="sec-head" data-rv>
-      <div class="eyebrow">Architecture <i>· 4 / 6</i></div>
+      <div class="eyebrow">Architecture <i>· 4 / 7</i></div>
       <h2>Where the GPU <span class="grad-text">actually sits</span></h2>
       <p>Sixteen components. One needs a GPU.</p>
     </div>
@@ -775,7 +775,7 @@ setTimeout(function(){
 <section id="guardrails" data-ch="3">
   <div class="container">
     <div class="sec-head" data-rv>
-      <div class="eyebrow">Architecture <i>· 5 / 6</i></div>
+      <div class="eyebrow">Architecture <i>· 5 / 7</i></div>
       <h2>Guardrails in <span class="grad-text">seven layers</span></h2>
       <p>Each layer owns one trust boundary.</p>
     </div>
@@ -825,7 +825,7 @@ setTimeout(function(){
 <section id="mlops" class="tint" data-ch="3">
   <div class="container">
     <div class="sec-head" data-rv>
-      <div class="eyebrow">Architecture <i>· 6 / 6</i></div>
+      <div class="eyebrow">Architecture <i>· 6 / 7</i></div>
       <h2>One governed <span class="grad-text">MLOps loop</span></h2>
       <p>Five tools become one platform. Retraining runs itself.</p>
     </div>
@@ -886,11 +886,80 @@ setTimeout(function(){
   </div>
 </section>
 
+<!-- 3.7 Decision layer: SLM + JEPA world model -->
+<section id="decide" data-ch="3">
+  <div class="container">
+    <div class="sec-head" data-rv>
+      <div class="eyebrow">Architecture <i>· 7 / 7</i></div>
+      <h2>Small model talks, <span class="grad-text">world model decides</span></h2>
+      <p>JEPA plans in latent space, not in tokens.</p>
+    </div>
+    <div class="wf" data-rv>
+      <div class="wf-bar"><span class="dia-tag">Plan → act → re-plan</span><button class="wf-btn" type="button"><svg class="i-pause" viewBox="0 0 10 10"><path d="M1 0h3v10H1zM6 0h3v10H6z"/></svg><svg class="i-play" viewBox="0 0 10 10"><path d="M1 0l9 5-9 5z"/></svg><span>Pause</span></button></div>
+      <div class="dia"><div class="dia-stage">
+        <svg viewBox="0 0 1180 372" role="img" aria-label="A small language model turns a request into a goal; a JEPA world model encodes the observation, imagines candidate actions in latent space, scores them against the goal and acts, then re-plans from the new observation.">
+          <text class="hd" x="48" y="26">LANGUAGE · SMALL MODEL</text>
+          <g class="nd" data-s="1" data-b="1"><rect class="bx" x="48" y="40" width="200" height="56" rx="10"/><text class="t1" x="66" y="63">Request</text><text class="t2" x="66" y="80">“move pallet to bay 3”</text></g>
+          <path class="fl fl-t" data-s="1" d="M248 68 H288" marker-end="url(#m-t)"/>
+          <g class="nd" data-s="1"><rect class="bx-c" x="290" y="40" width="240" height="56" rx="10"/><text class="t1" x="308" y="63">SLM · intent</text><text class="t2" x="308" y="80">text → structured goal</text></g>
+          <path class="fl fl-c" data-s="1" d="M530 68 H570" marker-end="url(#m-c)"/>
+          <g class="nd" data-s="1"><rect class="bx-v" x="572" y="40" width="240" height="56" rx="10"/><text class="t1" x="590" y="63">Goal encoder</text><text class="t2" x="590" y="80">goal → target latent z*</text></g>
+          <path class="fl fl-v" data-s="4" d="M812 68 H993 V168" marker-end="url(#m-v)"/>
+
+          <text class="hd" x="48" y="156">DECISION · JEPA WORLD MODEL IN LATENT SPACE</text>
+          <g class="nd" data-s="2" data-b="2"><rect class="bx" x="48" y="170" width="200" height="56" rx="10"/><text class="t1" x="66" y="193">Observation</text><text class="t2" x="66" y="210">camera · sensors · state</text></g>
+          <path class="fl fl-g" data-s="2" d="M248 198 H288" marker-end="url(#m-g)"/>
+          <g class="nd" data-s="2"><rect class="bx-g" x="290" y="170" width="240" height="56" rx="10"/><text class="t1" x="308" y="193">JEPA encoder</text><text class="t2" x="308" y="210">observation → latent z</text></g>
+          <path class="fl fl-g" data-s="3" d="M530 198 H570" marker-end="url(#m-g)"/>
+          <g class="nd" data-s="3" data-b="3"><rect class="bx-g" x="572" y="170" width="240" height="56" rx="10"/><text class="t1" x="590" y="193">Predictor</text><text class="t2" x="590" y="210">z + action → next z</text></g>
+          <path class="fl fl-v" data-s="4" d="M812 198 H852" marker-end="url(#m-v)"/>
+          <g class="nd" data-s="4" data-b="4"><rect class="bx-v" x="854" y="170" width="278" height="56" rx="10"/><text class="t1" x="872" y="193">Planner</text><text class="t2" x="872" y="210">lowest distance to z* wins</text></g>
+          <path class="fl fl-t" data-s="3" style="stroke-dasharray:6 5" d="M900 226 V262 H692 V228" marker-end="url(#m-t)"/>
+          <text class="t2" x="806" y="280" text-anchor="middle" style="fill:var(--teal)">candidate actions</text>
+
+          <text class="hd" x="854" y="296">ACTION</text>
+          <path class="fl fl-b" data-s="5" d="M993 226 V304" marker-end="url(#m-b)"/>
+          <g class="nd" data-s="5" data-b="5"><rect class="bx-b" x="854" y="306" width="278" height="56" rx="10"/><text class="t1" x="872" y="329">Act</text><text class="t2" x="872" y="346">robot · tool · workflow — L4 approval</text></g>
+          <path class="fl fl-t" data-s="6" style="stroke-dasharray:6 5" d="M854 334 H148 V228" marker-end="url(#m-t)"/>
+          <text class="t2" x="500" y="326" text-anchor="middle" style="fill:var(--teal)">new observation → re-plan</text>
+        </svg>
+      </div></div>
+      <ol class="steps" style="--n:6">
+        <li><i class="k">1</i><b>Intent</b><span>SLM turns text into a goal</span></li>
+        <li><i class="k">2</i><b>Observe</b><span>Encode the world to latent</span></li>
+        <li><i class="k">3</i><b>Imagine</b><span>Roll out candidate actions</span></li>
+        <li><i class="k">4</i><b>Score</b><span>Closest to the goal wins</span></li>
+        <li><i class="k">5</i><b>Act</b><span>Execute, with approval</span></li>
+        <li><i class="k">6</i><b>Re-plan</b><span>Loop on the new state</span></li>
+      </ol>
+    </div>
+
+    <div class="tbl-wrap" data-rv style="margin-top:22px">
+      <table>
+        <thead><tr><th>JEPA model</th><th>From</th><th>Released</th><th>Size</th><th>Decision role</th><th>Openness</th></tr></thead>
+        <tbody>
+          <tr><td>V-JEPA 2 · 2-AC</td><td>Meta FAIR</td><td>Jun 2025</td><td>1.2B</td><td>Zero-shot robot pick-and-place from image goals</td><td>Code + weights</td></tr>
+          <tr><td>LeWorldModel</td><td>Mila · NYU · Samsung · Brown</td><td>Mar 2026</td><td>15M</td><td>Plans in ~1 s on one GPU</td><td>Paper + code</td></tr>
+          <tr><td>H-JEPA</td><td>LeCun, Balestriero et al.</td><td>Oct 2026</td><td>~2 GB checkpoints</td><td>Hierarchical, long-horizon visual planning</td><td>MIT</td></tr>
+          <tr><td>EB-JEPA</td><td>Meta FAIR</td><td>Feb 2026</td><td>library</td><td>Train small world models from scratch</td><td>Open source</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="chips" data-rv>
+      <span><b>SLM</b> → language and intent</span>
+      <span><b>JEPA</b> → plan in latent space</span>
+      <span><b>Large LLM</b> → escalate the hard cases</span>
+      <span><b>L4 code</b> → approve the irreversible</span>
+    </div>
+    <p class="dia-note" data-rv><b>Still research-grade for business workflows.</b> Proven on robots and simulated control; pilot before production.</p>
+  </div>
+</section>
+
 <!-- ================= 04 · SIZING ================= -->
 <div class="chapter" id="ch4" data-ch="4"><div class="container chapter-in" data-rv>
   <span class="ch-n grad-text">04</span>
   <div class="ch-t"><b>Sizing</b><span>What fits before buying</span></div>
-  <div class="ch-links"><a href="#sizing"><b>1</b>Models</a><a href="#claims"><b>2</b>Claims checked</a><a href="#playground"><b>3</b>Planner</a></div>
+  <div class="ch-links"><a href="#sizing"><b>1</b>Models</a><a href="#slm"><b>2</b>Small models</a><a href="#claims"><b>3</b>Claims checked</a><a href="#playground"><b>4</b>Planner</a></div>
 </div></div>
 
 <section id="sizing" data-ch="4">
@@ -911,11 +980,31 @@ setTimeout(function(){
           <tr><td>GLM-5.3 <span style="font-weight:400;color:var(--muted)">· Z.ai</span></td><td>Aug 2026</td><td>753B / ~40B</td><td>MLA + DSA</td><td>GLM-5.3 licence</td><td>text</td><td>1M</td><td>753 · 377 GB</td></tr>
           <tr><td>GLM-5.3-Flash <span style="font-weight:400;color:var(--muted)">· Z.ai</span></td><td>Aug 2026</td><td>320B / 18B</td><td>linear + sparse (34 : 11)</td><td>MIT</td><td>text · image</td><td>1M</td><td>320 · 160 GB</td></tr>
           <tr><td>Qwen3.8-27B <span style="font-weight:400;color:var(--muted)">· Alibaba</span></td><td>Aug 2026</td><td>27B dense</td><td>DeltaNet + full (48 : 16)</td><td>Apache 2.0</td><td>text · image · video</td><td>262K</td><td>27 · 14 GB</td></tr>
+          <tr><td>Qwen3.8-2.4T-A95B <span style="font-weight:400;color:var(--muted)">· Alibaba</span></td><td>Aug 2026</td><td>2.4T / 95B</td><td>DeltaNet + gated attn</td><td>Qwen3.8-Max licence</td><td>text</td><td>262K → 1M</td><td>2,400 · 1,200 GB</td></tr>
           <tr><td>Kimi K3 <span style="font-weight:400;color:var(--muted)">· Moonshot</span></td><td>Jul 2026</td><td>2.8T / 104B</td><td>KDA + MLA (69 : 24)</td><td>Kimi K3 licence</td><td>text · image · video</td><td>1M</td><td>2,800 · 1,400 GB</td></tr>
         </tbody>
       </table>
     </div>
     <p class="dia-note">From each vendor's Hugging Face model card and <code>config.json</code>, checked 21 Oct 2026. GLM-5.3 active size assumes the GLM-5.2 base the card names. Custom licences carry revenue or attribution terms — read them before production use.</p>
+
+    <div class="sub-head" id="slm" data-rv>
+      <div class="eyebrow">Sizing <i>· small models</i></div>
+      <h3>Small models <span class="grad-text">do most work</span></h3>
+    </div>
+    <div class="tbl-wrap" data-rv>
+      <table>
+        <thead><tr><th>Small model</th><th>Total / active</th><th>Attention</th><th>Licence</th><th>Context</th><th>4-bit weights</th><th>Runs on</th></tr></thead>
+        <tbody>
+          <tr><td>Qwen3.8-27B <span style="font-weight:400;color:var(--muted)">· Alibaba</span></td><td>27B dense</td><td>DeltaNet + full</td><td>Apache 2.0</td><td>262K</td><td>~14 GB</td><td>One 24–48 GB GPU · DGX Spark</td></tr>
+          <tr><td>Gemma 4 26B-A4B <span style="font-weight:400;color:var(--muted)">· Google</span></td><td>25.2B / 3.8B MoE</td><td>sliding + global (25 : 5)</td><td>Apache 2.0</td><td>256K</td><td>~13 GB</td><td>One 24 GB GPU · DGX Spark</td></tr>
+          <tr><td>Qwen3.6-35B-A3B <span style="font-weight:400;color:var(--muted)">· Alibaba</span></td><td>35B / 3B MoE</td><td>DeltaNet + full (30 : 10)</td><td>Apache 2.0</td><td>262K</td><td>~18 GB</td><td>One 24 GB GPU · DGX Spark</td></tr>
+          <tr><td>Gemma 4 12B <span style="font-weight:400;color:var(--muted)">· Google</span></td><td>12B dense</td><td>sliding + global</td><td>Apache 2.0</td><td>256K</td><td>~6 GB</td><td>16 GB GPU · laptop</td></tr>
+          <tr><td>Qwen3.5-9B <span style="font-weight:400;color:var(--muted)">· Alibaba</span></td><td>9B</td><td>DeltaNet + gated attn</td><td>Apache 2.0</td><td>262K</td><td>~5 GB</td><td>Laptop · edge server</td></tr>
+          <tr><td>Gemma 4 E4B / E2B <span style="font-weight:400;color:var(--muted)">· Google</span></td><td>4.5B / 2.3B effective</td><td>sliding + global</td><td>Apache 2.0</td><td>128K</td><td>~4 / 2.5 GB</td><td>Phone · edge device</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="dia-note">Ranked by the <a href="https://benchlm.ai/best/small-language-models">BenchLM small-model board</a> (20 Oct 2026); specs from each Hugging Face card. 4-bit sizes are total params ÷ 2. <b>Route routine work to a small model; escalate the hard cases.</b></p>
 
     <div class="sub-head" data-rv>
       <div class="eyebrow">Sizing <i>· what the claim omits</i></div>
@@ -995,7 +1084,7 @@ setTimeout(function(){
       </div>
       <div class="pg-body">
         <div class="pg-ctl">
-          <div class="ctl"><label>Model <em id="lModel">70B dense</em></label><input type="range" id="sModel" min="0" max="7" step="1" value="2" aria-label="Model"></div>
+          <div class="ctl"><label>Model <em id="lModel">70B dense</em></label><input type="range" id="sModel" min="0" max="9" step="1" value="4" aria-label="Model"></div>
           <div class="ctl"><label>Precision <em id="lPrec">FP8 / INT8</em></label>
             <div class="seg" id="segPrec"><button data-b="2">FP16</button><button data-b="1" class="on">FP8</button><button data-b="0.5">INT4</button></div></div>
           <div class="ctl"><label>Context length <em id="lCtx">8,192</em></label><input type="range" id="sCtx" min="0" max="5" step="1" value="2" aria-label="Context length"></div>
@@ -1295,7 +1384,9 @@ setTimeout(function(){
     // GQA: layers × 2 × kv_heads × head_dim × 2 B.  MLA: layers × (kv_lora + rope) × 2 B.
     var MODELS=[
       {n:'8B dense',               p:8,    kvb:131072, d:'32 layers × 2 × 8 KV heads × 128 dim × 2 B'},
+      {n:'Gemma 4 · 26B-A4B MoE',  p:25.2, kvb:10240,  fix:104857600, d:'5 global layers × 2 KV heads × 512 dim × 2 B (K = V); + 100 MB fixed sliding window per user'},
       {n:'Qwen3.8 · 27B dense',    p:27,   kvb:65536,  d:'16 full-attention layers × 2 × 4 KV heads × 256 dim × 2 B'},
+      {n:'Qwen3.6 · 35B-A3B MoE',  p:35,   kvb:20480,  d:'10 full-attention layers × 2 × 2 KV heads × 256 dim × 2 B'},
       {n:'70B dense',              p:70,   kvb:327680, d:'80 layers × 2 × 8 KV heads × 128 dim × 2 B'},
       {n:'GLM-5.3-Flash · 320B',   p:320,  kvb:11264,  d:'11 sparse MLA layers × 512 latent × 2 B'},
       {n:'DeepSeek-V4.1-Flash · 552B',p:552,kvb:890,   d:'published global FP4 KV cache'},
@@ -1329,11 +1420,11 @@ setTimeout(function(){
           gpu=GPUS[+sGpu.value], count=+sCount.value,
           servers=Math.ceil(count/PER_SERVER);
       var wGB=m.p*bytes, kvPerTok=m.kvb,
-          kvTotal=kvPerTok*ctx*users/1073741824,
+          kvTotal=(kvPerTok*ctx+(m.fix||0))*users/1073741824,
           kvGB=kvTotal*tier.hot,               // resident portion
           kvOff=kvTotal-kvGB,                  // paged to the second tier
           offCap=tier.pool*servers,
-          sessionGB=kvPerTok*ctx/1073741824,   // one user's cache, for page-back cost
+          sessionGB=(kvPerTok*ctx+(m.fix||0))/1073741824,   // one user's cache, for page-back cost
           sub=wGB+kvGB, head=sub*0.15, total=sub+head, avail=gpu.g*count;
 
       $('lModel').textContent=m.n;
@@ -1388,7 +1479,7 @@ setTimeout(function(){
       }
       $('math').innerHTML=
         '<b>KV per token</b> = '+m.d+' = <b>'+kb(kvPerTok)+'</b><br>'+
-        '<b>KV cache</b>&nbsp;&nbsp;&nbsp; = '+kb(kvPerTok)+' × '+ctx.toLocaleString()+' tokens × '+users.toLocaleString()+' users = <b>'+fmt(kvGB)+' GB</b><br>'+
+        '<b>KV cache</b>&nbsp;&nbsp;&nbsp; = '+kb(kvPerTok)+' × '+ctx.toLocaleString()+' tokens × '+users.toLocaleString()+' users'+(m.fix?' + '+fmt(m.fix*users/1073741824)+' GB window':'')+' = <b>'+fmt(kvGB)+' GB</b><br>'+
         '<b>Weights</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = '+m.p+'B params × '+bytes+' bytes = <b>'+fmt(wGB)+' GB</b><br>'+
         '<b>Total</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = ('+fmt(wGB)+' + '+fmt(kvGB)+') × 1.15 headroom = <b>'+fmt(total)+' GB</b>';
     }
