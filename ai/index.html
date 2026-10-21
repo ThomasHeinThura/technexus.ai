@@ -449,10 +449,10 @@ setTimeout(function(){
       </div>
       <div class="path p2" data-rv>
         <div class="tag">2 · Desktop class</div>
-        <h3>Grace-Blackwell dev system</h3>
-        <p class="spec">128 GB unified memory · ~1 PFLOP FP4</p>
-        <ul><li>Off the shelf, on-prem</li><li>Pilot and team serving</li><li>Later the dev/test tier</li></ul>
-        <div class="cost">Entry point<b>One unit, low five figures</b></div>
+        <h3>NVIDIA DGX Spark</h3>
+        <p class="spec">GB10 · 128 GB unified · 273 GB/s · ~1 PFLOP FP4</p>
+        <ul><li>Off the shelf, on-prem</li><li>Up to ~200B params; two linked ~405B</li><li class="x">273 GB/s limits decode speed</li></ul>
+        <div class="cost">Entry point<b>Desktop unit · ~US$4.7k list</b></div>
       </div>
       <div class="path p3" data-rv>
         <div class="tag">3 · Lowest capex</div>
@@ -475,7 +475,7 @@ setTimeout(function(){
       <h3>Prove it rented, <span class="grad-text">then own it</span></h3>
     </div>
     <div class="quad" id="quad" data-rv>
-      <svg viewBox="0 0 1120 560" role="img" aria-label="The four paths plotted by speed to production and sovereignty: rent to prove, move to desktop class, then own a dedicated server.">
+      <svg viewBox="0 0 1120 560" role="img" aria-label="The four paths plotted by speed to production and sovereignty: rent to prove, move to DGX Spark, then own a dedicated server.">
         <rect class="qfill" x="130" y="40" width="470" height="230" rx="4"/>
         <rect class="qfill" x="600" y="270" width="470" height="230" rx="4"/>
         <path class="qgrid" d="M130 40 H1070 M130 155 H1070 M130 270 H1070 M130 385 H1070 M130 500 H1070"/>
@@ -493,7 +493,7 @@ setTimeout(function(){
         <text class="qname" x="235" y="412" text-anchor="middle">GPU-as-a-Service</text>
         <text class="qsub" x="235" y="429" text-anchor="middle">same day · offshore</text>
         <circle class="qbub" cx="400" cy="150" r="56" style="fill:color-mix(in srgb,var(--cyan) 26%,transparent);stroke:var(--cyan);stroke-width:1.8"/>
-        <text class="qname" x="400" y="147" text-anchor="middle">Desktop class</text>
+        <text class="qname" x="400" y="147" text-anchor="middle">DGX Spark</text>
         <text class="qsub" x="400" y="164" text-anchor="middle">weeks · on-prem</text>
         <circle class="qbub" cx="640" cy="215" r="48" style="fill:color-mix(in srgb,var(--warn) 26%,transparent);stroke:var(--warn);stroke-width:1.8"/>
         <text class="qname" x="640" y="212" text-anchor="middle">Retrofit</text>
@@ -898,25 +898,24 @@ setTimeout(function(){
     <div class="sec-head" data-rv>
       <div class="eyebrow">Sizing <i>· open models</i></div>
       <h2>What fits, <span class="grad-text">before buying</span></h2>
-      <p>“Runs on 8× H200” means weights only, one user.</p>
+      <p>Open models from the last three months, sized honestly.</p>
     </div>
 
     <div class="tbl-wrap" data-rv>
       <table>
-        <thead><tr><th>Open model</th><th>Total / active</th><th>Architecture</th><th>Licence</th><th>Modality</th><th>API $/1M in·out</th><th>Published deployment</th></tr></thead>
+        <thead><tr><th>Open model</th><th>Released</th><th>Total / active</th><th>Attention</th><th>Licence</th><th>Input</th><th>Context</th><th>Weights FP8 · FP4</th></tr></thead>
         <tbody>
-          <tr><td>Inkling <span style="font-weight:400;color:var(--muted)">· Thinking Machines</span></td><td>975B / 41B</td><td>MoE + SWA-GA</td><td>Apache 2.0</td><td>text · image · audio</td><td>TBD</td><td>8× H200</td></tr>
-          <tr><td>Nemotron 3 Ultra <span style="font-weight:400;color:var(--gpu)">· NVIDIA</span></td><td>550B / 55B</td><td>Mamba-MoE hybrid</td><td>OpenMDW</td><td>text</td><td>$0.50 · $2.20</td><td>4× B200</td></tr>
-          <tr><td>GLM-5.2 <span style="font-weight:400;color:var(--muted)">· Z.ai</span></td><td>753B / 40B</td><td>MoE + DSA</td><td>MIT</td><td>text</td><td>$1.40 · $4.40</td><td>8× H200</td></tr>
-          <tr><td>Kimi K2.6 <span style="font-weight:400;color:var(--muted)">· Moonshot</span></td><td>1T / 32B</td><td>MoE + MLA</td><td>MIT*</td><td>text · image · video</td><td>$0.70 · $3.00</td><td>8× H200</td></tr>
-          <tr><td>DeepSeek-V4 Pro <span style="font-weight:400;color:var(--muted)">· DeepSeek</span></td><td>1.6T / 49B</td><td>MoE + CSA-HCA</td><td>MIT</td><td>text</td><td>$0.44 · $0.87</td><td>8× H200</td></tr>
-          <tr><td>Qwen3.6-35B <span style="font-weight:400;color:var(--muted)">· Alibaba</span></td><td>35B / 3B</td><td>MoE + DeltaNet</td><td>Apache 2.0</td><td>text · image</td><td>$0.14 · $1.00</td><td>one 24 GB GPU</td></tr>
-          <tr><td>Gemma 4 31B <span style="font-weight:400;color:var(--muted)">· Google</span></td><td>31B dense</td><td>Dense + SWA hybrid</td><td>Apache 2.0</td><td>text · image · audio</td><td>$0.12 · $0.35</td><td>one gaming GPU</td></tr>
-          <tr><td>MiniMax M3 <span style="font-weight:400;color:var(--muted)">· MiniMax</span></td><td>428B / 23B</td><td>MoE + MSA</td><td>restricted</td><td>text · image · video</td><td>$0.30 · $1.20</td><td>8× H200</td></tr>
+          <tr><td>Muse Spark Open <span style="font-weight:400;color:var(--muted)">· Meta</span></td><td>Oct 2026</td><td>816B / 42B</td><td>GQA · 16 KV heads</td><td>Muse licence</td><td>text · image · video · audio</td><td>1M</td><td>816 · 408 GB</td></tr>
+          <tr><td>DeepSeek-V4.1-Flash <span style="font-weight:400;color:var(--muted)">· DeepSeek</span></td><td>Sep 2026 · Oct update</td><td>552B / 8–16B</td><td>CSA2 · FP4 KV</td><td>MIT</td><td>text · image</td><td>1M</td><td>552 · 276 GB</td></tr>
+          <tr><td>Nemotron 3.5 Super VL <span style="font-weight:400;color:var(--gpu)">· NVIDIA</span></td><td>Oct 2026</td><td>120B / 12B</td><td>Mamba-2 + attention</td><td>OpenMDW 1.1</td><td>text · image · video</td><td>1M</td><td>120 · 60 GB</td></tr>
+          <tr><td>GLM-5.3 <span style="font-weight:400;color:var(--muted)">· Z.ai</span></td><td>Aug 2026</td><td>753B / ~40B</td><td>MLA + DSA</td><td>GLM-5.3 licence</td><td>text</td><td>1M</td><td>753 · 377 GB</td></tr>
+          <tr><td>GLM-5.3-Flash <span style="font-weight:400;color:var(--muted)">· Z.ai</span></td><td>Aug 2026</td><td>320B / 18B</td><td>linear + sparse (34 : 11)</td><td>MIT</td><td>text · image</td><td>1M</td><td>320 · 160 GB</td></tr>
+          <tr><td>Qwen3.8-27B <span style="font-weight:400;color:var(--muted)">· Alibaba</span></td><td>Aug 2026</td><td>27B dense</td><td>DeltaNet + full (48 : 16)</td><td>Apache 2.0</td><td>text · image · video</td><td>262K</td><td>27 · 14 GB</td></tr>
+          <tr><td>Kimi K3 <span style="font-weight:400;color:var(--muted)">· Moonshot</span></td><td>Jul 2026</td><td>2.8T / 104B</td><td>KDA + MLA (69 : 24)</td><td>Kimi K3 licence</td><td>text · image · video</td><td>1M</td><td>2,800 · 1,400 GB</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="dia-note">Specifications as published by <a href="https://blog.bytebytego.com/">ByteByteGo</a>. Verify against the model card before quoting.</p>
+    <p class="dia-note">From each vendor's Hugging Face model card and <code>config.json</code>, checked 21 Oct 2026. GLM-5.3 active size assumes the GLM-5.2 base the card names. Custom licences carry revenue or attribution terms — read them before production use.</p>
 
     <div class="sub-head" data-rv>
       <div class="eyebrow">Sizing <i>· what the claim omits</i></div>
@@ -925,7 +924,7 @@ setTimeout(function(){
     <div class="grid g3">
       <div class="card" data-rv><span class="who">1 · Users</span><h3>No concurrency budget</h3><p>70B, 32 users, 8k context: <b>~80 GB KV</b> — more than the weights.</p></div>
       <div class="card" data-rv><span class="who">2 · Context</span><h3>No context budget</h3><p>8k → 128k multiplies each user's cache by 16.</p></div>
-      <div class="card" data-rv><span class="who">3 · MoE</span><h3>All experts stay resident</h3><p>DeepSeek-V4 Pro: 49B active, <b>1.6T in memory</b>.</p></div>
+      <div class="card" data-rv><span class="who">3 · MoE</span><h3>All experts stay resident</h3><p>Kimi K3: 104B active, <b>2.8T in memory</b>.</p></div>
     </div>
 
     <div class="sub-head" id="claims" data-rv>
@@ -934,16 +933,19 @@ setTimeout(function(){
     </div>
     <div class="tbl-wrap" data-rv>
       <table>
-        <thead><tr><th>Claim</th><th>Resident weights</th><th>+ KV · 32 users · 8k</th><th>Total vs 1,128 GB</th><th>Verdict</th></tr></thead>
+        <thead><tr><th>Model</th><th>KV / token</th><th>+ KV · 32 users · 8k</th><th>Total · 15% headroom</th><th>Verdict</th></tr></thead>
         <tbody>
-          <tr><td>DeepSeek-V4 Pro · 1.6T</td><td>FP8 1,600 · FP4 800 GB</td><td>+61 GB</td><td>FP4 → 990 GB · 88%</td><td class="rec">FP4 only</td></tr>
-          <tr><td>Kimi K2.6 · 1T</td><td>FP8 1,000 · FP4 500 GB</td><td>+61 GB</td><td>FP8 → 1,220 GB</td><td class="bad">FP8 over capacity</td></tr>
-          <tr><td>GLM-5.2 · 753B</td><td>FP8 753 GB</td><td>+92 GB</td><td>FP8 → 972 GB · 86%</td><td class="rec">Fits · no growth room</td></tr>
-          <tr><td>Qwen3.6-35B · “one 24 GB GPU”</td><td>FP4 17.5 GB</td><td>+48 GB</td><td>needs 75 GB</td><td class="bad">One user only</td></tr>
+          <tr><td>Kimi K3 · 2.8T</td><td>27 KB</td><td>+7 GB</td><td>FP4 → 1,618 GB · 143%</td><td class="bad">Two servers, even at FP4</td></tr>
+          <tr><td>Muse Spark Open · 816B</td><td>248 KB</td><td>+62 GB</td><td>FP8 → 1,010 GB · 90%</td><td class="bad">FP8 fits, no headroom</td></tr>
+          <tr><td>GLM-5.3 · 753B</td><td>88 KB</td><td>+22 GB</td><td>FP8 → 891 GB · 79%</td><td class="rec">Fits at FP8</td></tr>
+          <tr><td>DeepSeek-V4.1-Flash · 552B</td><td>0.9 KB</td><td>+0.2 GB</td><td>FP8 → 635 GB · 56%</td><td class="rec">Fits · KV negligible</td></tr>
+          <tr><td>GLM-5.3-Flash · 320B</td><td>11 KB</td><td>+3 GB</td><td>FP8 → 371 GB · 33%</td><td class="rec">3× H200 is enough</td></tr>
+          <tr><td>Qwen3.8-27B</td><td>64 KB</td><td>+16 GB</td><td>FP4 → 34 GB</td><td class="rec">One DGX Spark or 48 GB card</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="dia-note">Every figure comes from the planner below, so table and tool never drift apart.</p>
+    <p class="dia-note">KV per token from each <code>config.json</code> (attention layers only; DeepSeek's figure is its published FP4 cache). Every row matches the planner below.</p>
+    <div class="banner" data-rv><b>Hybrid attention changed the maths.</b> KV per token fell from 320 KB (70B dense) to under 1 KB. Weights now decide the hardware.</div>
 
     <div class="sub-head" data-rv>
       <div class="eyebrow">Sizing <i>· by model class</i></div>
@@ -993,14 +995,14 @@ setTimeout(function(){
       </div>
       <div class="pg-body">
         <div class="pg-ctl">
-          <div class="ctl"><label>Model <em id="lModel">70B dense</em></label><input type="range" id="sModel" min="0" max="8" step="1" value="3" aria-label="Model"></div>
+          <div class="ctl"><label>Model <em id="lModel">70B dense</em></label><input type="range" id="sModel" min="0" max="7" step="1" value="2" aria-label="Model"></div>
           <div class="ctl"><label>Precision <em id="lPrec">FP8 / INT8</em></label>
             <div class="seg" id="segPrec"><button data-b="2">FP16</button><button data-b="1" class="on">FP8</button><button data-b="0.5">INT4</button></div></div>
           <div class="ctl"><label>Context length <em id="lCtx">8,192</em></label><input type="range" id="sCtx" min="0" max="5" step="1" value="2" aria-label="Context length"></div>
           <div class="ctl"><label>Concurrent users <em id="lUsers">32</em></label><input type="range" id="sUsers" min="0" max="10" step="1" value="5" aria-label="Concurrent users"></div>
           <div class="ctl"><label>KV cache tier <em id="lTier">HBM only</em></label>
             <div class="seg" id="segTier"><button data-t="0" class="on">HBM only</button><button data-t="1">+ CPU RAM</button><button data-t="2">+ NVMe</button></div></div>
-          <div class="ctl"><label>Accelerator <em id="lGpu">H200 NVL · 141 GB</em></label><input type="range" id="sGpu" min="0" max="5" step="1" value="4" aria-label="Accelerator"></div>
+          <div class="ctl"><label>Accelerator <em id="lGpu">H200 NVL · 141 GB</em></label><input type="range" id="sGpu" min="0" max="6" step="1" value="4" aria-label="Accelerator"></div>
           <div class="ctl"><label>GPU count <em id="lCount">1 GPU · 1 server</em></label><input type="range" id="sCount" min="1" max="40" step="1" value="1" aria-label="GPU count"></div>
         </div>
         <div class="pg-out">
@@ -1288,17 +1290,18 @@ setTimeout(function(){
   /* ---- capacity planner: renders synchronously, no observers involved ---- */
   guard(function(){
     // p = TOTAL resident params in billions (MoE: all experts sit in VRAM).
-    // L / kv / hd drive KV-cache size. Generic classes plus published open models.
+    // kvb = KV-cache bytes per token from each config.json; only layers with a
+    // growing cache count (linear / DeltaNet / KDA layers hold a fixed state).
+    // GQA: layers × 2 × kv_heads × head_dim × 2 B.  MLA: layers × (kv_lora + rope) × 2 B.
     var MODELS=[
-      {n:'8B dense',            p:8,    L:32,  kv:8,  hd:128},
-      {n:'Gemma 4 · 31B dense', p:31,   L:48,  kv:8,  hd:128},
-      {n:'Qwen3.6 · 35B MoE',   p:35,   L:48,  kv:8,  hd:128},
-      {n:'70B dense',           p:70,   L:80,  kv:8,  hd:128},
-      {n:'MiniMax M3 · 428B',   p:428,  L:80,  kv:8,  hd:128},
-      {n:'Nemotron 3 Ultra',    p:550,  L:80,  kv:8,  hd:128},
-      {n:'GLM-5.2 · 753B',      p:753,  L:92,  kv:8,  hd:128},
-      {n:'Kimi K2.6 · 1T',      p:1000, L:61,  kv:8,  hd:128},
-      {n:'DeepSeek-V4 Pro·1.6T',p:1600, L:61,  kv:8,  hd:128}
+      {n:'8B dense',               p:8,    kvb:131072, d:'32 layers × 2 × 8 KV heads × 128 dim × 2 B'},
+      {n:'Qwen3.8 · 27B dense',    p:27,   kvb:65536,  d:'16 full-attention layers × 2 × 4 KV heads × 256 dim × 2 B'},
+      {n:'70B dense',              p:70,   kvb:327680, d:'80 layers × 2 × 8 KV heads × 128 dim × 2 B'},
+      {n:'GLM-5.3-Flash · 320B',   p:320,  kvb:11264,  d:'11 sparse MLA layers × 512 latent × 2 B'},
+      {n:'DeepSeek-V4.1-Flash · 552B',p:552,kvb:890,   d:'published global FP4 KV cache'},
+      {n:'GLM-5.3 · 753B',         p:753,  kvb:89856,  d:'78 MLA layers × (512 + 64) × 2 B'},
+      {n:'Muse Spark Open · 816B', p:816,  kvb:253952, d:'62 layers × 2 × 16 KV heads × 64 dim × 2 B'},
+      {n:'Kimi K3 · 2.8T',         p:2800, kvb:27648,  d:'24 MLA layers × (512 + 64) × 2 B'}
     ];
     var CTX=[2048,4096,8192,16384,32768,131072];
     var USERS=[1,2,4,8,16,32,64,128,256,512,1000];
@@ -1312,19 +1315,20 @@ setTimeout(function(){
     ];
     var tier=TIERS[0];
     var GPUS=[{n:'L40S',g:48},{n:'A100',g:80},{n:'H100 SXM',g:80},
-              {n:'RTX PRO 6000 Blackwell',g:96},{n:'H200 NVL',g:141},{n:'Grace-Blackwell (unified)',g:128}];
+              {n:'RTX PRO 6000 Blackwell',g:96},{n:'H200 NVL',g:141},{n:'DGX Spark · GB10 unified',g:128},{n:'B200',g:192}];
     var bytes=1;
     var sModel=document.getElementById('sModel'); if(!sModel) return;
     var sCtx=document.getElementById('sCtx'), sUsers=document.getElementById('sUsers'),
         sGpu=document.getElementById('sGpu'), sCount=document.getElementById('sCount');
     var $=function(i){return document.getElementById(i)};
     function fmt(v){ return v>=100?Math.round(v):v>=10?v.toFixed(1):v.toFixed(2); }
+    function kb(b){ return b<10240?(b/1024).toFixed(1)+' KB':Math.round(b/1024)+' KB'; }
 
     function render(){
       var m=MODELS[+sModel.value], ctx=CTX[+sCtx.value], users=USERS[+sUsers.value],
           gpu=GPUS[+sGpu.value], count=+sCount.value,
           servers=Math.ceil(count/PER_SERVER);
-      var wGB=m.p*bytes, kvPerTok=2*m.L*m.kv*m.hd*2,
+      var wGB=m.p*bytes, kvPerTok=m.kvb,
           kvTotal=kvPerTok*ctx*users/1073741824,
           kvGB=kvTotal*tier.hot,               // resident portion
           kvOff=kvTotal-kvGB,                  // paged to the second tier
@@ -1356,7 +1360,7 @@ setTimeout(function(){
       $('nK').textContent=fmt(kvGB)+' GB';
       $('sK').textContent=tier.hot<1
         ? 'resident '+Math.round(tier.hot*100)+'% of '+fmt(kvTotal)+' GB'
-        : Math.round(kvPerTok/1024)+' KB/token × '+ctx.toLocaleString()+' × '+users.toLocaleString();
+        : kb(kvPerTok)+'/token × '+ctx.toLocaleString()+' × '+users.toLocaleString();
       var ot=$('offTile');
       if(tier.pool>0){
         ot.style.display='';
@@ -1383,8 +1387,8 @@ setTimeout(function(){
         v.innerHTML='<b>Does not fit</b> — '+fmt(total)+' GB needed, '+avail+' GB available. Needs '+Math.ceil(total/gpu.g)+'× '+gpu.n+', lower precision or shorter context.'+note;
       }
       $('math').innerHTML=
-        '<b>KV per token</b> = 2 × '+m.L+' layers × '+m.kv+' KV heads × '+m.hd+' dim × 2 bytes = <b>'+Math.round(kvPerTok/1024)+' KB</b><br>'+
-        '<b>KV cache</b>&nbsp;&nbsp;&nbsp; = '+Math.round(kvPerTok/1024)+' KB × '+ctx.toLocaleString()+' tokens × '+users.toLocaleString()+' users = <b>'+fmt(kvGB)+' GB</b><br>'+
+        '<b>KV per token</b> = '+m.d+' = <b>'+kb(kvPerTok)+'</b><br>'+
+        '<b>KV cache</b>&nbsp;&nbsp;&nbsp; = '+kb(kvPerTok)+' × '+ctx.toLocaleString()+' tokens × '+users.toLocaleString()+' users = <b>'+fmt(kvGB)+' GB</b><br>'+
         '<b>Weights</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = '+m.p+'B params × '+bytes+' bytes = <b>'+fmt(wGB)+' GB</b><br>'+
         '<b>Total</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = ('+fmt(wGB)+' + '+fmt(kvGB)+') × 1.15 headroom = <b>'+fmt(total)+' GB</b>';
     }
